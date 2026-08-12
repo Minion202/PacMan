@@ -1,6 +1,4 @@
-# Pac-Man mit C# und Avalonia
-
-Dies ist eine einfache Pac-Man-Version, die mit C# und Avalonia erstellt wurde.
+## Pac-Man mit C# und Avalonia
 
 ## Funktionen
 

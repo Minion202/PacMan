@@ -1,0 +1,59 @@
+<Window
+    x:Class="PacMan.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Pac-Man"
+    Width="700"
+    Height="650"
+    Background="Black"
+    KeyDown="KeyPressed">
+
+    <Grid RowDefinitions="Auto,*,Auto" Margin="20">
+
+        <StackPanel Grid.Row="0">
+            <TextBlock
+                Text="PAC-MAN"
+                Foreground="Yellow"
+                FontSize="32"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"/>
+
+            <Grid ColumnDefinitions="*,*,*" Margin="0,10">
+                <TextBlock x:Name="ScoreText"
+                           Text="Punkte: 0"
+                           Foreground="White"
+                           FontSize="18"/>
+
+                <TextBlock x:Name="LevelText"
+                           Grid.Column="1"
+                           Text="Level: 1"
+                           Foreground="White"
+                           FontSize="18"
+                           HorizontalAlignment="Center"/>
+
+                <TextBlock x:Name="LivesText"
+                           Grid.Column="2"
+                           Text="Leben: 3"
+                           Foreground="White"
+                           FontSize="18"
+                           HorizontalAlignment="Right"/>
+            </Grid>
+        </StackPanel>
+
+        <Canvas x:Name="GameCanvas"
+                Grid.Row="1"
+                Width="588"
+                Height="420"
+                Background="Black"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+
+        <TextBlock x:Name="InfoText"
+                   Grid.Row="2"
+                   Text="Steuerung: Pfeiltasten oder WASD"
+                   Foreground="White"
+                   FontSize="16"
+                   HorizontalAlignment="Center"
+                   Margin="0,10,0,0"/>
+    </Grid>
+</Window>

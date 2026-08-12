@@ -1,46 +1,41 @@
-## Pac-Man mit C# und Avalonia
+# Pac-Man mit C# und Avalonia
 
-## Funktionen
+<img width="700" height="675" alt="Screenshot 2026-08-12 at 21 43 37" src="https://github.com/user-attachments/assets/40b6fff9-496c-486b-a57e-292da6746133" />
 
-- 3 Levels
-- 3 Leben
-- Punkte sammeln
-- 3 Geister
-- Steuerung mit WASD oder Pfeiltasten
-- automatische Geisterbewegung mit festen Regeln
-- automatischer Wechsel zum nächsten Level
 
-## Starten
+## Projektbeschreibung
 
-1. Den Ordner `PacManSimple` in JetBrains Rider öffnen.
-2. Warten, bis Rider die NuGet-Pakete geladen hat.
-3. Oben auf den grünen Play-Button drücken.
-
-Es sind keine weiteren Einstellungen nötig.
-
-## Aufbau
-
-Das Projekt wurde absichtlich einfach gehalten.
-
-- `Program.cs` startet das Programm.
-- `App.axaml` enthält die Avalonia-Einstellungen.
-- `MainWindow.axaml` enthält das Aussehen des Fensters.
-- `MainWindow.axaml.cs` enthält die komplette Spiellogik.
+In diesem Projekt habe ich eine einfache Version von Pac-Man mit **C#, .NET 10 und Avalonia** programmiert. Das Spiel besitzt drei Levels, drei Leben, Punkte und mehrere Geister.
 
 ## Spielfeld
 
-Das Spielfeld wird mit Zahlen gespeichert.
+Das Spielfeld habe ich mit einem zweidimensionalen Array erstellt. Dabei haben die Zahlen folgende Bedeutung:
 
-- `0` bedeutet leer
-- `1` bedeutet Wand
-- `2` bedeutet Punkt
+```text
+0 = leeres Feld
+1 = Wand
+2 = Punkt
+```
 
-Dadurch können Levels direkt im Code geändert werden.
+So konnte ich die drei Levels einfach als unterschiedliche Labyrinthe erstellen.
+
+## Bewegung
+
+Pac-Man wird mit **WASD oder den Pfeiltasten** gesteuert. Vor jeder Bewegung überprüft das Programm, ob sich eine Wand auf dem nächsten Feld befindet.
+
+Wenn Pac-Man einen Punkt einsammelt, erhält der Spieler 10 Punkte.
 
 ## Geister
 
-Die Geister verwenden keine künstliche Intelligenz und keinen Zufall. Sie bewegen sich mit festen Richtungsregeln durch das Labyrinth. Wenn vor ihnen eine Wand ist, nehmen sie die nächste mögliche Richtung.
+Die Geister bewegen sich automatisch mit einem `DispatcherTimer`. An Kreuzungen können sie zufällig eine mögliche Richtung auswählen. Dadurch bewegen sie sich nicht immer genau gleich.
 
-## Ziel
+## Levels und Leben
 
-Das Ziel ist es, alle Punkte in allen drei Levels einzusammeln, ohne alle drei Leben zu verlieren.
+Pac-Man startet mit drei Leben. Wenn er einen Geist berührt, verliert er ein Leben und wird zurückgesetzt.
+
+Sobald alle Punkte eingesammelt wurden, startet das nächste Level. Nach dem dritten Level ist das Spiel geschafft.
+
+## Was ich gelernt habe
+
+Bei diesem Projekt konnte ich verschiedene Grundlagen von C# anwenden, besonders **Arrays, Methoden, Klassen, Listen, Bedingungen, Tastatureingaben und Timer**. Ausserdem habe ich gelernt, wie man mit Avalonia eine einfache Benutzeroberfläche für ein Spiel erstellt.
+
